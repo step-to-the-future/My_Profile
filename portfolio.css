@@ -1,0 +1,554 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  border: none;
+  outline: none;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: rgb(92, 65, 114);
+  overflow-y: hidden;
+}
+.wrapper{
+  position: relative;
+  width: 65rem;
+  height: 37rem; 
+  padding: 1rem;
+  perspective: 250rem;
+  animation: show-animate 2s forwards;
+}
+
+@keyframes show-animate {
+  0%, 30% {
+    opacity: 0;
+    transform: rotate(-20deg);
+  }  
+  100% {
+    opacity: 1;
+    transform: rotate(0deg);
+  }  
+}
+
+.cover{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(45deg, #00abf0,  #006e9a);
+  box-shadow: 0 0 .6rem rgba(0, 0, 0, .2);
+  border-top-left-radius: .6rem;
+  border-bottom-left-radius: .6rem;
+  transform-origin: right;
+}
+.cover.cover-left{
+  z-index: -1;
+}
+.cover.cover-right.turn{
+  transform: rotateY(180deg);
+}
+.cover.cover-right{
+  z-index: 100;
+  transition: transform 1s cubic-bezier(.645, .045, .355, 1);
+}
+.book{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  perspective: 250rem;
+}
+.book .book-page{
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(90deg, #fff, #ddd);
+  box-shadow: 0 0 .6rem rgba(0, 0, 0, .1);
+  padding: 1rem;
+  display: flex;
+}
+.book-page.page-left{
+  box-shadow: -.6rem .6rem .6rem rgba(0, 0, 0, .2);
+}
+.profile-page{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+
+.spinning-circle-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.spinning-circle {
+  width: 180px; /* Adjust as needed */
+  height: 180px; /* Adjust as needed */
+  border: 5px solid #3498db; /* Adjust color as needed */
+  border-style:dotted;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: spin 15s linear infinite;
+}
+
+.profile-photo {
+  width: 180px; /* Match the width of the spinning-circle */
+  height: 180px; /* Match the height of the spinning-circle */
+  border-radius: 50%;
+  display: block;
+}
+
+@keyframes spin {
+  0% {
+      transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+      transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+.name{
+  font-weight: bold;
+  font-size: 2rem;
+}
+.job{
+  margin-top: 5px;
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: #00abf0;
+}
+.profile-page .social-media{
+  margin: .6rem 0 .8rem;
+}
+.profile-page .social-media a{
+  display: inline-flex;
+  width: 35px;
+  height: 35px;
+  background: transparent;
+  border-radius: 50%;
+  margin: 0 .7rem;
+  transition: transform 0.3s ease;
+}
+.profile-page .social-media a:hover{
+  transform: scale(1.2);
+}
+.describtion{
+  width: 97%;
+  text-align: justify;
+  font-weight: bold;
+  font-size: 17px;
+  color:  rgb(83, 82, 82);
+}
+.profile-page .btn-box{
+  margin-top: 1.4rem;
+}
+.btn{
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 9.5rem;
+  height: 2rem;
+  background: #00abf0;
+  border: .125rem solid #00abf0;
+  border-radius: .3rem;
+  font-size: 1.2rem;
+  color: white;
+  font-weight: bold;
+  margin: 0 1rem;
+  transition: .5s;
+}
+.btn:hover{
+  background: transparent;
+  color: #00abf0;
+}
+.btn-box .btn:nth-child(2){
+  background: transparent;
+  color: #00abf0;
+}
+.btn-box .btn:nth-child(2):hover{
+  background:#00abf0;
+  color: #fff;
+}
+
+
+/*     CONTENT OF THE SECOND PAGE OF MY PORTFOLIO      */
+
+.book-page.page-right{
+  position: absolute;
+  right: 0;
+  transform-style: preserve-3d;
+  transform-origin: left;
+  transition: transform 1s cubic-bezier(.645, .045, .355, 1);
+}
+.book-page.page-right.turn{
+  transform: rotateY(-180deg);
+}
+.book-page .page-front,
+.book-page .page-back{
+ position: absolute;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+ background: linear-gradient(90deg, #fff, #ddd);
+ padding: 1rem 1rem;
+}
+
+.year{
+  font-size: 25px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  margin-top: 15px;
+  color: #00abf0;
+}
+.calend{
+  height: 25px;
+  width: 25px;
+  margin-right: 10px;
+}
+.prjects{
+  margin-top: 25px;
+}
+.desc{
+  width: 95%;
+  font-size: 17px;
+  font-weight: bold;
+  color: rgb(83, 82, 82);
+}
+
+
+
+
+
+.straigt{
+  display: grid;
+  justify-content: center;
+}
+.straigt a{
+  display: flex;
+  align-items: center;
+  color: #00abf0;
+  font-weight: bold;
+  font-size: 30px;
+  margin-top: 30px;
+  cursor: default;
+}
+.straigt a:last-child {
+  color: black;
+  justify-content: center;
+  margin-top: 20px;
+}
+.line{
+  width: 100%;
+  height: 3px;
+  background: black;
+  margin-top: 20px;
+}
+.hg-icon{
+  width: 60px;
+  height: 60px;
+  margin-right: 10px;
+}
+.lg-icon{
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+
+
+/*NUmber - page*/
+
+.number-page{
+  font-size: 19px;
+  font-weight: bold;
+  position: absolute;
+  color: black;
+  left: 95%;
+  transform: translateX(-50%);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.arrow-right{
+  width: 30px;
+  height: 30px;
+  transition: .3s;
+  cursor: pointer;
+}
+.arrow-right:hover{
+  transform: scale(1.2);
+ }
+
+.nextprev-btn{
+  position: absolute;
+  right: 1.2rem;
+  bottom: .4rem;
+}
+
+/*       CONTENT OF THE THIRD PAGE OF MY PORTFOLIO       */
+
+
+.title2{
+  margin-bottom: 20px;
+}
+.descri{
+  font-size: 24px;
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: black;
+}
+.desc2{
+  width: 98%;
+  font-size: 20px;
+  font-weight: bold;
+  color: rgb(83, 82, 82);
+  margin-bottom: 50px;
+}
+
+
+ .book-page .page-front{
+  transform: rotateY(0deg) translateZ(1px);
+ }
+ .book-page .page-back {
+  transform: rotateY(180deg) translateZ(1px);
+ }
+
+ .nextprev-btn.back{
+  left: 1.2rem;
+ }
+ .arrow-left{
+  width: 30px;
+  height: 30px;
+  transition: .3s;
+  cursor: pointer;
+ }
+ .arrow-left:hover{
+  transform: scale(1.2);
+ }
+
+
+
+ /*       CONTENT OF THE Fourth PAGE OF MY PORTFOLIO       */
+ 
+
+ .services-box{
+  display: flex;
+  flex-wrap: wrap;
+  gap: .1rem;
+ }
+ .services-box .services-content {
+  border-radius: 20px;
+  padding: .4rem .5rem .6rem;
+  border: .125rem solid #00abf0;  
+  margin-top: 20px;
+  transition: .3s ease;
+ }
+ .services-box .services-content:hover {
+  box-shadow: 0 0 .6rem  rgba(0, 0, 0, .4);
+ }
+
+.program{
+  width: 45px;
+  height: 45px;
+}
+.webdevelopment{
+  font-weight: bold;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+}
+
+
+
+/*       CONTENT OF THE Fourth PAGE OF MY PORTFOLIO       */
+
+.skills-box{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+.skills-box .skills-content{
+  flex:  1 1 20rem;
+}
+.skills-content h3{
+  font-size: 1.3rem;
+  line-height: 1;
+  margin-bottom: 1rem;
+  margin-top: 3rem;
+  text-align: center;
+}
+.skills-content .content{
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+.skills-content .content span{
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 6rem;
+  height: 6rem;
+  border: .125rem solid #00abf0;
+  border-radius: .3rem;
+  cursor: default;
+  font-weight: bold;
+  transition: .3s ease;
+}
+.skills-content .content span:hover{
+  box-shadow: 0 0 .6rem rgba(0, 0, 0, .4);
+}
+
+.tilda{
+  width: 50px;
+  height: 50px;
+}
+
+.html{
+  width: 50px;
+  height: 50px;
+}
+
+.css{
+  width: 50px;
+  height: 50px;
+}
+.js{
+  width: 50px;
+  height: 50px;
+}
+
+
+/*       CONTENT OF THE Fifth PAGE OF MY PORTFOLIO       */
+
+
+.portfolio-box .img-box{
+  display: flex;
+  justify-content: center;
+  border: .125rem solid #00abf0;
+  border-radius: .5rem;
+  width: 470px;
+  height: 250px;
+  overflow: hidden;
+  margin-top: 20px;
+}
+.portfolio-box .img-box .po-pic{
+  width: 100%;
+  object-fit: cover;
+  transition:  .5s ease;
+}
+.portfolio-box .img-box:hover .po-pic{
+  transform: scale(1.1);
+}
+
+.portfolio-box .info-box{
+  margin: 2.5rem 0 1.5rem;
+}
+.portfolio-box .info-box .info-title{
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.portfolio-box .info-box .info-title h3{
+  font-size: 1.5rem;
+}
+.portfolio-box .info-box .info-title a{
+  display: flex;
+  align-items: center;
+  color: #00abf0;
+  font-size: 1.3rem;
+  font-weight: bold;  
+  transition: .5s ease;
+}
+.portfolio-box .info-box .info-title a .link{
+  margin-left: .3rem;
+}
+.portfolio-box .info-box .info-title a:hover{
+  transform: scale(1.1);
+}
+
+.link{
+  width: 20px;
+  height: 20px;
+}
+
+
+/*       CONTENT OF THE Fifth PAGE OF MY PORTFOLIO       */
+.contact-box{
+  text-align: center;
+}
+
+.contact-box .field{
+  width: 100%;
+  background: transparent;
+  border: .125rem solid #00abf0;
+  border-radius: .3rem;
+  padding: .8rem;
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+  margin-top: 2rem;
+}
+.contact-box .field::placeholder{
+  color: #333;
+}
+.contact-box textarea{
+  resize: none;
+  height: 10rem;
+}
+.contact-box .btn{
+  cursor: pointer;
+  height: 40px;
+  margin-top: 15px;
+}
+
+.back-profile{
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  right: 2rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  background: transparent;
+  border: .125rem solid #00abf0;
+  border-radius: 50%;
+  font-size: 1.1rem;
+  color: #00abf0;
+  display: inline-flex;
+  transition: .5s;
+}
+.back-profile p{
+  position: absolute;
+  top: 0;
+  left: 50%;
+  color: #00abf0;
+  font-weight: bold;
+  transform: translateX(-50%) scale(.5);
+  font-size: 1rem;
+  opacity: 0;
+  transition: .5s;
+}
+.back-profile:hover p{
+  opacity: 1;
+  transform: translateX(-50%) scale(1);
+  top: -1.8rem;
+}
+
+.pic-prof{
+  height: 2.1rem;
+  width: 2.1rem;
+}
